@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build:css": "tailwindcss -i ./renderer/styles.css -o ./dist/output.css --watch"
   },
   "build": {
     "win": {
@@ -34,11 +35,11 @@
     "@electron/fuses": "^1.8.0",
     "autoprefixer": "^10.4.21",
     "electron": "^36.2.1",
-    "electron-builder": "^26.0.12",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.7"
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "@tailwindcss/cli": "^4.1.7",
+    "electron-squirrel-startup": "^1.0.1",
+    "tailwindcss": "^4.1.7"
   }
 }
