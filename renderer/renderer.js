@@ -17,12 +17,21 @@ deviceOptions.forEach(option => {
 });
 
 
-openPreviewBtn.addEventListener('click', () => {
+openPreviewBtn.addEventListener('click', async() => {
   let url = urlInput.value.trim();
-  if (!url) {
-    alert('Please enter a URL');
-    return;
-  }
+    if (!url) {
+      try {
+        await window.electronAPI.showDialog({
+          type: 'warning',
+          message: 'Please enter a URL',
+          buttons: ['OK']
+        });
+        urlInput.focus();
+      } catch (err) {
+        console.error('Dialog error:', err);
+      }
+      return;
+    }
   
   if (!url.startsWith('http://') && !url.startsWith('https://')) {
     url = 'https://' + url;
@@ -33,7 +42,11 @@ openPreviewBtn.addEventListener('click', () => {
   const selectedDevice = document.querySelector('input[name="device"]:checked');
   
   if (!selectedDevice) {
-    alert('Please select a device or custom size');
+    await window.electronAPI.showDialog({
+      type: 'warning',
+      message: 'Please select a device or custom size',
+      buttons: ['OK']
+    });
     return;
   }
   
@@ -46,11 +59,7 @@ openPreviewBtn.addEventListener('click', () => {
   }
 
   console.log('Opening preview:', { url, width, height });
-  if (window.electron) {
-    window.electron.openPreview({ url, width, height });
-  } else {
-    console.log('Electron API not available. In a real app, this would open a new window with:', { url, width, height });
-  }
+  window.electronAPI.openPreview({ url, width, height });
 });
 
 document.getElementById('iphone-14-pro').checked = true;

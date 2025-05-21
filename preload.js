@@ -1,10 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-// Expose protected methods that allow the renderer process to use
-// the ipcRenderer without exposing the entire object
-contextBridge.exposeInMainWorld(
-  'electron',
-  {
-    openPreview: (data) => ipcRenderer.send('open-preview', data)
-  }
-);
+contextBridge.exposeInMainWorld('electronAPI', {
+  showDialog: (options) => ipcRenderer.invoke('show-dialog', options),
+  openPreview: (options) => ipcRenderer.send('open-preview', options)
+});
