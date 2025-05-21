@@ -1,6 +1,6 @@
 {
   "name": "device-dock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to preview websites in different device dimensions",
   "main": "main.js",
   "scripts": {
