@@ -38,7 +38,6 @@
     "electron-builder": "^26.0.12"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.7",
     "electron-squirrel-startup": "^1.0.1",
     "tailwindcss": "^4.1.7"
   }
