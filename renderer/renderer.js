@@ -37,7 +37,7 @@ openPreviewBtn.addEventListener('click', async() => {
     url = 'https://' + url;
   }
 
-  const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?$/;
+  const urlPattern = /^(https?:\/\/)?(localhost|([\w-]+\.)+[\w-]+)(:\d+)?(\/[\w- .\/?%&=]*)?$/;
 
   if (!urlPattern.test(url)) {
     await window.electronAPI.showDialog({
