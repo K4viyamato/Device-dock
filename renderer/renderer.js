@@ -37,6 +37,18 @@ openPreviewBtn.addEventListener('click', async() => {
     url = 'https://' + url;
   }
 
+  const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?$/;
+
+  if (!urlPattern.test(url)) {
+    await window.electronAPI.showDialog({
+      type: 'error',
+      message: 'Please enter a valid URL (e.g., example.com or https://example.com)',
+      buttons: ['OK']
+    });
+    urlInput.focus();
+    return;
+  }
+
   let width, height;
   
   const selectedDevice = document.querySelector('input[name="device"]:checked');
