@@ -68,7 +68,7 @@ npm start</code></pre>
   <p><strong>Note:</strong> Ensure the icon and build configurations are properly set in <code>package.json</code>.</p>
 
   <h2>📦 Releases</h2>
-  <p>Download the latest version from the <a href="https://github.com/K4viyamato/Device-dock/releases/tag/v1.0.0">GitHub Releases page</a>.</p>
+  <p>Download the latest version from the <a href="https://github.com/K4viyamato/Device-dock/releases/tag/v1.0.1">GitHub Releases page</a>.</p>
 
   <h2>🙌 Credits</h2>
   <p>Made with ❤️ by <a href="https://github.com/K4viyamato">K4viyamato</a></p>
