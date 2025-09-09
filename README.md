@@ -9,7 +9,7 @@
 
   <h1>🖥️ Device Dock</h1>
 
-  <p><strong>Device Dock</strong> is a desktop application(windows for now) built using <strong>Electron</strong> and web technologies that offers a responsive preview experience for web developers. It allows you to visualize how your websites and apps look on different screen sizes — all from a standalone desktop app.</p>
+  <p><strong>Device Dock</strong> is a desktop application(windows for now) built using <strong>Electron</strong> and web technologies that offers a responsive preview experience for web developers. It allows you to visualize how your websites and apps look on different screen sizes all from a standalone desktop app.</p>
 
    <div style="text-align:center; margin:2rem 0;">
     <img
@@ -23,7 +23,6 @@
   <ul>
     <li>🔄 Responsive preview of websites</li>
     <li>🖥️ Multiple screen sizes and device types</li>
-    <li>⚡ Lightweight and fast</li>
     <li>💡 Simple draggable previews</li>
   </ul>
 
