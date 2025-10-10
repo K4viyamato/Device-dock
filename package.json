@@ -10,14 +10,28 @@
     "build:css": "tailwindcss -i ./renderer/styles.css -o ./dist/output.css --watch"
   },
   "build": {
-    "win": {
-      "icon": "assets/icon.ico"
-    },
-    "linux": {
-      "icon": "assets/icon.ico"
+    "appId": "com.k4viyamato.device-dock",
+    "productName": "Device Dock",
+    "directories": {
+      "buildResources": "assets"
     },
     "mac": {
-      "icon": "assets/icon.ico"
+      "icon": "assets/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": "nsis"
+    },
+    "linux": {
+      "icon": "assets/icon.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     }
   },
   "keywords": [],
@@ -34,6 +48,7 @@
     "@electron-forge/plugin-fuses": "^7.8.1",
     "@electron/fuses": "^1.8.0",
     "autoprefixer": "^10.4.21",
+    "dmg-license": "^1.0.11",
     "electron": "^36.2.1",
     "electron-builder": "^26.0.12"
   },
